@@ -1,0 +1,1 @@
+<h1>Autres dépenses</h1>

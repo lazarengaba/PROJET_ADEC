@@ -1,0 +1,1 @@
+<h1>Impression caisse</h1>

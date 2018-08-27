@@ -1,0 +1,36 @@
+.topBar{height: 35px; background-color: #3A5199;line-height: 35px;}
+.topBar .version{font-size: 13px; color: #A1D6E2; float: right; margin-right: 15px;}
+.topBar, .topBar a{color: #A1D6E2;}
+
+.menuBar{margin-top: 5px; border-bottom: 1px solid #ccc;}
+.menuBar a div:hover{background-color: #fff;}
+.menuBar a div{display: inline-block; border: 1px solid #ccc; padding: 5px 0; width: 85px; text-align: center; border-bottom: none; color: #555; font-size: 13px; margin-right: -4px; background-color: #eee;}
+.menuBar a .menuItemActive{border: 1px solid rgb(143, 198, 243); background-color: #fff; color: #4897D8; border-top: 3px solid #4897D8; border-bottom: none; font-weight: bold;}
+.sousMenu{display: none;}
+.sousMenu .titreSousMenu{font-size: 11px; margin-top: -10px; text-align: center;}
+.ribbon{background-color: #fff; border-bottom: 1px solid #80bef1;}
+.ribbon .sousMenu .icnSousMenu{text-align: center; border: 1px solid transparent;}
+.ribbon .sousMenu .icnSousMenu:hover{background-color: #ddeffb; border: 1px solid #bae0fa;}
+.containerPersonalisee{margin: 0 25px;}
+
+.titreEcoleAnnee{font-size: 13px;background-color: #80bef1; padding: 3px 5px; color: #480ca8fa;}
+.resumeTable{font-size: 13px;}
+.ligneBleue{border: 1px solid #3A5199;}
+.ADECdesc{background-color: #3A5199; color: #fff;padding: 10px 15px;}
+.ADECdesc a {color: #A1D6E2;font-size: 13px;}
+.accesRapide{background-color: #c5f1c1; color: #347d55; font-size: 13px; padding: 3px 5px; border-bottom: 1px solid#86cb7f; width: 100%;}
+
+.historique.ui.violet.table.segment{font-size: 13px; color: #e44b1c;}
+.gestionUsers{background-color: #fcdcbf; color: #d27727; font-size: 13px; padding: 3px 5px; border-bottom: 1px solid#f9bf8b;}
+.separateurFotter{border-bottom: 1px solid #ccc; margin: 0 15%;}
+#boutonAccesRapide{width: 10%; line-height: 15px;}
+
+.ajouterClasseContainer .title{font-size: 16px; color: #555;}
+.input{border: 1px solid #aaa; padding: 5px 6px; width: 200px;}
+
+.errorInvalidChoice{background-color: #e20a0a; color: #fff; padding: 4px 15px; text-align: center; display: inline-block; position: absolute; opacity: 0;}
+#nomClasse{display: none;}
+
+.successMessage{position: absolute; text-align: center; right: 35%; left: 35%;}
+
+.greenSuccessMessageColored{background-color: #10a818; color: #fff; padding: 7px; width: 100%; margin-top: 5px;}

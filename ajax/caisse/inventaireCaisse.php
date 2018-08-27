@@ -1,0 +1,1 @@
+<h1>Inventaire caisse</h1>

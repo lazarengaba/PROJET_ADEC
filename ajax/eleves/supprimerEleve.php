@@ -1,0 +1,1 @@
+<h1>Supprimer un élève de la liste</h1>
