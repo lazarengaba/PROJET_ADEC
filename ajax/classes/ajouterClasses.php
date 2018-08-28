@@ -22,7 +22,7 @@
             <option disabled selected>CLiquez ici pour sélectionner</option>
             <?php
                 while ($data=$req_build->fetch()) {
-                    echo "<option>".htmlspecialchars_decode($data['nom_niveau'])."</option>";
+                    echo "<option value='".$data['nom_niveau']."'>".$data['nom_niveau']."</option>";
                 }
 
                 $req_build->closeCursor();
@@ -58,12 +58,18 @@
 
             $('#ajouterClasseBtn').click(function() {
 
-                var niveauClasse = $(this).val();
+                var niveauClasse = $('#niveauClasse').val();
 
-                if ($('#niveauClasse').val()!=null) {
+                if (niveauClasse!=null) {
 
                     if (niveauClasse=="2nde"||niveauClasse=="1ere"||niveauClasse=="Tle") {
+
+                        var nomClasse=$('#nomClasse').val();
                         
+                        $.post('/PROJET_ADEC/traitementsAjax/ajouterClasseSec.php', {niveauClasse:niveauClasse,nomClasse:nomClasse}, function(data) {
+                            $('.successMessage').html(data);
+                        });
+
                     } else {
                         $.post('/PROJET_ADEC/traitementsAjax/ajouterClasse.php', {niveauClasse:niveauClasse}, function(data) {
                             $('.successMessage').html(data);
