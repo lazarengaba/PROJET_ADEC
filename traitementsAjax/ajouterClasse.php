@@ -1,51 +1,72 @@
 <?php
+
         require_once "../includedPages/connect.php";
-        $req="SELECT * FROM classe ORDER BY num_niveau";
-        $req_build=$bdd->prepare($req);
-        $req_exe=$req_build->execute();
 
-        $init_nb=$req_build->rowCount($req);
-
-        switch ($init_nb) {
-            case 0:
-                $insert=$bdd->prepare("INSERT INTO classes (niveau_classe, nom_classe) VALUES (?, ?)");
-                $insert_exe=$insert->execute(array($_POST['niveauClasse'], $_POST['niveauClasse']."A"));
-    ?>
-                <div class="greenSuccessMessageColored">
-                    <i class="check icon"></i>
-                    Opération effectuée avec succès !
-                </div>
-    <?php
-                break;
-
-            case 1:
-                $insert=$bdd->prepare("INSERT INTO classes (niveau_classe, nom_classe) VALUES (?, ?)");
-                $insert_exe=$insert->execute(array($_POST['niveauClasse'], $_POST['niveauClasse']."B"));
-    ?>
-                <div class="greenSuccessMessageColored">
-                    <i class="check icon"></i>
-                    Opération effectuée avec succès !
-                </div>
-    <?php
-                break;
-
-            case 2:
-                $insert=$bdd->prepare("INSERT INTO classes (niveau_classe, nom_classe) VALUES (?, ?)");
-                $insert_exe=$insert->execute(array($_POST['niveauClasse'], $_POST['niveauClasse']."C"));
-    ?>
-                <div class="greenSuccessMessageColored">
-                    <i class="check icon"></i>
-                    Opération effectuée avec succès !
-                </div>
-    <?php
-                break;
+        if (isset($_POST['niveauClasse'])) {
             
-            default:
-                // code...
-                break;
+            $req="SELECT * FROM classes WHERE niveau_classe = ?";
+            $req_build=$bdd->prepare($req);
+            $req_exe=$req_build->execute(array($_POST['niveauClasse']));
+
+            $init_nb=$req_build->rowCount($req);
+
+            switch ($init_nb) {
+                case 0:
+                    $insert=$bdd->prepare("INSERT INTO classes (niveau_classe, nom_classe) VALUES (?, ?)");
+                    $insert_exe=$insert->execute(array($_POST['niveauClasse'], $_POST['niveauClasse']." A"));
+                    $insert->closeCursor();
+        ?>
+                    <div class="greenSuccessMessageColored">
+                        <i class="check icon"></i>
+                        Classe <?=$_POST['niveauClasse']." A"; ?> ajoutée avec succès !
+                    </div>
+        <?php
+        
+                    break;
+
+                case 1:
+                    $insert=$bdd->prepare("INSERT INTO classes (niveau_classe, nom_classe) VALUES (?, ?)");
+                    $insert_exe=$insert->execute(array($_POST['niveauClasse'], $_POST['niveauClasse']." B"));
+                    $insert->closeCursor();
+        ?>
+                    <div class="greenSuccessMessageColored">
+                        <i class="check icon"></i>
+                        Classe <?=$_POST['niveauClasse']." B"; ?> ajoutée avec succès !
+                    </div>
+        <?php
+                    break;
+
+                case 2:
+                    $insert=$bdd->prepare("INSERT INTO classes (niveau_classe, nom_classe) VALUES (?, ?)");
+                    $insert_exe=$insert->execute(array($_POST['niveauClasse'], $_POST['niveauClasse']." C"));
+                    $insert->closeCursor();
+        ?>
+                    <div class="greenSuccessMessageColored">
+                        <i class="check icon"></i>
+                        Classe <?=$_POST['niveauClasse']." C"; ?> ajoutée avec succès !
+                    </div>
+        <?php
+                    break;
+                
+                default:
+                    
+        ?>
+                <div class="infoSuccessMessageColored">
+                    <i class="info icon"></i>
+                    Niveau maximum de nombre de classe atteint
+                </div>
+        <?php            
+
+                    break;
+            }
+        
+        } else {
+            // code...
         }
 
-    ?>
+        ?>
+
+        
 
 <script>
     $(document).ready(function() {
