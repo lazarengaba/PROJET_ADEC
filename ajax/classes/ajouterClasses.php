@@ -15,7 +15,7 @@
 
         </div>
     </div>
-    <div>
+    <div style="font-size: 13px;">
         Sélectionnez le niveau correspondant <i class="chevron right icon"></i>
 
         <select name="niveauClasse" id="niveauClasse" style="outline: none; padding: 4px 8px 4px 8px;">

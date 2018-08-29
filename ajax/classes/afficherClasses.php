@@ -15,17 +15,18 @@
         </div>
     </div>
 
-    <div class="listeClasses"></div>
+    <div class="listeClasses" id="listeClasses"></div>
+    <div id="fieldModifierClasse"></div>
 
     <script>
         $(document).ready(function() {
             recupClasses();
-	
+            
             function recupClasses() {
                 $.post('/PROJET_ADEC/traitementsAjax/recuperationClasses.php', function(data) {
                     $('.listeClasses').html(data);
                 });
             }
-            setInterval(recupClasses,2000);
+            setInterval(recupClasses,5000);
         });
     </script>
