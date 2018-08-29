@@ -8,7 +8,7 @@
                 <td width="70">
                     <a href="#" class="ajouterEleve">
                         <div class="icnSousMenu">
-                            <img src="images/Plus_48px.png" width="40" alt="Ajouter élève" class="ok">
+                            <img src="/PROJET_ADEC/images/Plus_48px.png" width="40" alt="Ajouter élève" class="ok">
                             
                             <div class="titreSousMenu">
                                 Ajouter
@@ -19,7 +19,7 @@
                 <td width="70">
                     <a href="#" class="modifierEleve">
                         <div class="icnSousMenu">
-                            <img src="images/Hand With Pen_48px.png" width="40" alt="Modifier élève">
+                            <img src="/PROJET_ADEC/images/Hand With Pen_48px.png" width="40" alt="Modifier élève">
                             
                             <div class="titreSousMenu">
                                 Modifier
@@ -30,7 +30,7 @@
                 <td width="70">
                     <a href="#" class="supprimerEleve">
                         <div class="icnSousMenu">
-                            <img src="images/Delete_48px.png" width="40" alt="Supprimer élève">
+                            <img src="/PROJET_ADEC/images/Delete_48px.png" width="40" alt="Supprimer élève">
                             
                             <div class="titreSousMenu">
                                 Supprimer
@@ -41,7 +41,7 @@
                 <td width="70">
                     <a href="#" class="rechercherEleve">
                         <div class="icnSousMenu">
-                            <img src="images/Search_96px.png" width="40" alt="Rechercher élève">
+                            <img src="/PROJET_ADEC/images/Search_96px.png" width="40" alt="Rechercher élève">
                             
                             <div class="titreSousMenu">
                                 Rechercher
@@ -52,7 +52,7 @@
                 <td width="70">
                     <a href="#" class="aideEleve">
                         <div class="icnSousMenu">
-                            <img src="images/Help_48px.png" width="40" alt="Aide">
+                            <img src="/PROJET_ADEC/images/Help_48px.png" width="40" alt="Aide">
                             
                             <div class="titreSousMenu">
                                 Aide
@@ -63,7 +63,7 @@
                 <td width="70">
                     <a href="#" class="parametresEleve">
                         <div class="icnSousMenu">
-                            <img src="images/Settings_48px.png" width="40" alt="Paramètres">
+                            <img src="/PROJET_ADEC/images/Settings_48px.png" width="40" alt="Paramètres">
                             
                             <div class="titreSousMenu">
                                 Paramètres
@@ -75,7 +75,7 @@
                 <td width="65">
                     <a href="#" class="aProposEleve">
                         <div class="icnSousMenu">
-                            <img src="images/Info_48px.png" width="40" alt="A propos">
+                            <img src="/PROJET_ADEC/images/Info_48px.png" width="40" alt="A propos">
                             
                             <div class="titreSousMenu">
                                 A propos
@@ -86,7 +86,7 @@
                 <td width="65">
                     <a href="#" class="documentationEleve">
                         <div class="icnSousMenu">
-                            <img src="images/Read_48px.png" width="40" alt="Documentation">
+                            <img src="/PROJET_ADEC/images/Read_48px.png" width="40" alt="Documentation">
                             
                             <div class="titreSousMenu">
                                 Documentation
@@ -97,7 +97,7 @@
                 <td width="65">
                     <a href="#" class="ArchivesEleve">
                         <div class="icnSousMenu">
-                            <img src="images/Binder_48px.png" width="40" alt="Arcives">
+                            <img src="/PROJET_ADEC/images/Binder_48px.png" width="40" alt="Arcives">
                             
                             <div class="titreSousMenu">
                                 Archives
@@ -562,7 +562,7 @@
                 <td width="70">
                     <a href="#" class="nouveauPlanning">
                         <div class="icnSousMenu">
-                            <img src="images/Calendar Plus_48px.png" width="40" alt="Nouveau planning">
+                            <img src="/PROJET_ADEC/images/Calendar Plus_48px.png" width="40" alt="Nouveau planning">
                             
                             <div class="titreSousMenu">
                                 Nouveau
@@ -573,7 +573,7 @@
                 <td width="70">
                     <a href="#" class="modifierPlanning">
                         <div class="icnSousMenu">
-                            <img src="images/Age_48px.png" width="40" alt="Modifier Planning">
+                            <img src="/PROJET_ADEC/images/Age_48px.png" width="40" alt="Modifier Planning">
                             
                             <div class="titreSousMenu">
                                 Modifier
@@ -584,7 +584,7 @@
                 <td width="70">
                     <a href="#" class="afficherPlanning">
                         <div class="icnSousMenu">
-                            <img src="images/Event_48px.png" width="40" alt="Afficher Planing">
+                            <img src="/PROJET_ADEC/images/Event_48px.png" width="40" alt="Afficher Planing">
                             
                             <div class="titreSousMenu">
                                 Afficher
@@ -595,7 +595,7 @@
                 <td width="70">
                     <a href="#" class="impressionPlanning">
                         <div class="icnSousMenu">
-                            <img src="images/Print_48px.png" width="40" alt="Impression">
+                            <img src="/PROJET_ADEC/images/Print_48px.png" width="40" alt="Impression">
                             
                             <div class="titreSousMenu">
                                 Impression
@@ -606,7 +606,7 @@
                 <td width="70">
                     <a href="#" clas="aidePlanning">
                         <div class="icnSousMenu">
-                            <img src="images/Help_48px.png" width="40" alt="Aide">
+                            <img src="/PROJET_ADEC/images/Help_48px.png" width="40" alt="Aide">
                             
                             <div class="titreSousMenu">
                                 Aide
@@ -617,7 +617,7 @@
                 <td width="70">
                     <a href="#" class="autresPlanning">
                         <div class="icnSousMenu">
-                            <img src="images/More_48px.png" width="40" alt="Autres">
+                            <img src="/PROJET_ADEC/images/More_48px.png" width="40" alt="Autres">
                             
                             <div class="titreSousMenu">
                                 Autres
