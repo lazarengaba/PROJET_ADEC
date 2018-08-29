@@ -1,15 +1,11 @@
     <?php
         require_once "../includedPages/connect.php";
 
-        $req="SELECT * FROM classes LEFT OUTER JOIN niveaux ON niveau_classe=nom_niveau ORDER BY num_niveau, nom_classe";
+        $req="SELECT * FROM classes LEFT OUTER JOIN niveaux ON niveau_classe=nom_niveau ORDER BY num_niveau DESC, nom_classe";
         $req_build=$bdd->prepare($req);
         $req_exe=$req_build->execute();
         $nb_row=$req_build->rowCount();
-
-        $index=0;
     ?>
-
-    <input type="hidden" value="<?php echo $nb_row; ?>" id="nbRows">
     
     <table width="100%">
 
@@ -20,51 +16,35 @@
                 <?php
                     if ($data['num_niveau']>10) {
                         echo "<td width='20%'><b>".$data['nom_classe']."</b></td>
-                            <td id='modifierClasse' width='35%'>
+                            <td id='modifierClasse' width='30%'>
                                 <a href='#'>Modifier<i class='chevron right icon'></i>&nbsp;&nbsp;</a>
-                                <input style='width :60px;' type='text' class='input' id='ancienNomClasse".$index."' value='".$data['nom_classe']."'>
-                                <input type='text' class='input' id='nouveauNomClasse".$index."' placeholder='Saisir le nouveau nom ...'>
-                                <button class='ui violet button mini' id='modifierClassBouton".$index."' style='border-radius: 0;'>Terminer</button>
+                                <div style='width: 75px; display: inline-block;'><b>".$data['nom_classe']."</b></div>
+                                <a target='_blank' href='/PROJET_ADEC/modifierClasse/?nomClasse=".$data['nom_classe']."' class='ui violet button mini' style='border-radius: 0;'>Modifier la classe</a>
                             </td>
                             <td>
-                                <a id='supprimerClasse' style='color: #e20a0a;' href='#'><i class='delete icon'></i>Supprimer</a>
+                                <a class='ui red button mini' style='border-radius: 0;' target='_blank' href='/PROJET_ADEC/supprimerClasse/?nomClasse=".$data['nom_classe']."'><i class='delete icon'></i>Supprimer</a>
                             </td>";
                     } else {
                         echo "<td width='20%'><b>".$data['nom_classe']."</b></td>
                         <td>
-                            <i class='ban icon'></i>
-                            <span style='color: #bbb;'>Non modifiable</span>
+                            <a href='#'>Modifier<i class='chevron right icon'></i>&nbsp;&nbsp;</a>
+                            <div style='width: 75px; display: inline-block;'><b>".$data['nom_classe']."</b></div>
+                            <a class='ui button mini' style='border-radius: 0;'><i class='ban icon'></i>Non modifiable</a>
                         </td>
                         <td>
-                            <i class='ban icon'></i>
-                            <span style='color: #aaa;'>Non modifiable</span>
+                            <a class='ui red button mini' style='border-radius: 0;' target='_blank' href='/PROJET_ADEC/supprimerClasse/?nomClasse=".$data['nom_classe']."'><i class='delete icon'></i>Supprimer</a>
                         </td>";
                     }
                         
                 ?>
             </tr>
     <?php
-            $index+=1;
         }
     ?>
 
     </table>
 
     <script>
-        var modifierClassBouton = $('#modifierClassBouton');
 
-        $(modifierClassBouton).each(function() {
-            $(this).click(function() {
-                alert($('#ancienNomClasse').val()+" "+$('#nouveauNomClasse').val())
-            });
-        });
-
-        var nbRows = $('#nbRows').val();
-
-        for (let i = 0; i < nbRows; i++) {
-            $('#modifierClassBouton'+i).click(function() {
-                alert($('#ancienNomClasse'+i).val()+' '+$('#nouveauNomClasse'+i).val());
-            });
-        }
-
+       
     </script>
