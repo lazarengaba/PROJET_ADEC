@@ -5,6 +5,22 @@
     require_once "includedPages/topBar.php";
     require_once "includedPages/menuBar.php";
     require_once "includedPages/ribbon.php";
+
+    $nb_classes = $bdd->prepare("SELECT COUNT(*) nbClasses FROM classes");
+    $nb_classes_exe = $nb_classes->execute();
+    $data_nb_classes = $nb_classes->fetch();
+
+    $nb_eleves = $bdd->prepare("SELECT COUNT(*) nbEleves FROM eleves");
+    $nb_eleves_exe = $nb_eleves->execute();
+    $data_nb_eleves = $nb_eleves->fetch();
+
+    $nb_enseignants = $bdd->prepare("SELECT COUNT(*) nbEnseignants FROM enseignants");
+    $nb_enseignants_exe = $nb_enseignants->execute();
+    $data_nb_enseignants = $nb_enseignants->fetch();
+
+    $nb_matieres = $bdd->prepare("SELECT COUNT(*) nbMatieres FROM matieres");
+    $nb_matieres_exe = $nb_matieres->execute();
+    $data_nb_matieres = $nb_matieres->fetch();
 ?>
 
 <div class="containerPersonalisee">
@@ -27,10 +43,10 @@
                     <td>
                         Nombre total de classes<br />
                         <a href="#">
-                            10 Classes
+                            <b><?=$data_nb_classes['nbClasses']; ?> Classes</b>
                         </a><br />
                         <div style="height: 5px;"></div>
-                        <a href="#" class="ui button mini" style="border-radius: 0;">
+                        <a href="#" class="ui button mini afficherClasses" style="border-radius: 0;">
                             <i class="plus icon"></i>Voir plus
                         </a>
 
@@ -42,10 +58,10 @@
                     <td>
                         Nombre total d'élèves<br />
                         <a href="#">
-                            2153 Elèves
+                        <b><?=$data_nb_eleves['nbEleves']; ?> Elèves</b>
                         </a><br />
                         <div style="height: 5px;"></div>
-                        <a href="#" class="ui button mini" style="border-radius: 0;">
+                        <a href="#" class="ui button mini totalEeleves" style="border-radius: 0;">
                             <i class="plus icon"></i>Voir plus
                         </a>
                     </td>
@@ -56,10 +72,10 @@
                     <td>
                         Nombre total d'enseignants<br />
                         <a href="#">
-                            21 Enseignants
+                            <b><?=$data_nb_enseignants['nbEnseignants']; ?> Enseignants</b>
                         </a><br />
                         <div style="height: 5px;"></div>
-                        <a href="#" class="ui button mini" style="border-radius: 0;">
+                        <a href="#" class="ui button mini afficherEnseignants" style="border-radius: 0;">
                             <i class="plus icon"></i>Voir plus
                         </a>
                     </td>
@@ -70,10 +86,10 @@
                     <td>
                         Nombre total de matières<br />
                         <a href="#">
-                            21 Matières
+                            <b><?=$data_nb_matieres['nbMatieres']; ?> Matières</b>
                         </a><br />
                         <div style="height: 5px;"></div>
-                        <a href="#" class="ui button mini" style="border-radius: 0;">
+                        <a href="#" class="ui button mini afficherMatieres" style="border-radius: 0;">
                             <i class="plus icon"></i>Voir plus
                         </a>
                     </td>
@@ -101,30 +117,34 @@
                         <table class="ui violet table segment historique" style="border-radius: 0;">
                             <tr>
                                 <td>
-                                    <a href="">
-                                        <i class="time icon"></i><b>Historiques</b>
-                                        <i class="chevron right icon"></i>
-                                        <b>Actions
+                                    <a href="#">
+                                        <i class="user icon"></i> <b>TOGBA Lazare</b>
                                     </a>
                                 </td>
                                 <td width="250">
-                                    <a href="#"><b>Date</b></a>
+                                    <a href="#"><b><i class="log out icon"></i>Se déconnecter</b></a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Inscription d'un nouvel élève
+                                    Messages non lus <span style="background-color: red; padding: 3px 5px; border-radius: 2px; color: #fff;">2</span>
                                 </td>
                                 <td>
-                                    25 - 08 - 2018 à 15 Heures 35 min.
+                                    <a href="#">
+                                        <i class="eye icon"></i>Voir tous les messages
+                                    </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Règlement de facture
+                                    <a href="#">
+                                        <i class="send icon"></i>Envoyer un message
+                                    </a>
                                 </td>
                                 <td>
-                                    25 - 08 - 2018 à 15 Heures 35 min.
+                                    <a href="#">
+                                        <i class="wrench icon"></i>Modifier ses paramètres
+                                    </a>
                                 </td>
                             </tr>
                         </table>
@@ -214,7 +234,7 @@
                     <i class="cog icon"></i>Gestion d'accréditations
                 </a>
                 <a href="#" class="ui button" style="border-radius: 0;" id="boutonAccesRapide">
-                    <i class="plus circle icon"></i>Découvrir plus
+                    <i class="envelope icon"></i>Messages rapides
                 </a>
                 
             </div>

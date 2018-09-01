@@ -30,7 +30,8 @@
                 }
             ?>
                 </select>
-                <input type="text" class="input" id="matriculeEleve" style="width: 103px;" placeholder="Matricule ..." value="<?=$data['mle']; ?>" >
+                <span style="background-color: #e44b1c;padding: 5px; color: #fff; border-radius: 2px;"><b><?=$data['mle']; ?></b></span>
+                <input type="hidden" id="matriculeEleve" style="width: 103px;" placeholder="Matricule ..." value="<?=$data['mle']; ?>" >
             </td>
             <td width="250" colspan="2">
                 <b>INFO PARENT / TUTEUR</b>

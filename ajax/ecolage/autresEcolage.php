@@ -1,1 +1,76 @@
-<h1>Autres écolage</h1>
+<?php
+        require_once "../../includedPages/connect.php";
+        $req="SELECT * FROM classes LEFT OUTER JOIN niveaux ON niveau_classe = nom_niveau ORDER BY num_niveau DESC";
+        $req_build=$bdd->prepare($req);
+        $req_exe=$req_build->execute();
+    ?>
+
+    <div class="successMessage">
+
+    </div>
+
+    <div class="ajouterClasseContainer"><br />
+        <div class="title">
+            <i class="cogs icon"></i><b>Paramétrage du montant total du sole d'écolage</b><br /><br />
+
+        </div>
+    </div>
+    
+    <div style="font-size: 13px;">
+        <table>
+            <tr>
+                <td>
+                    Sélectiionnez la classe correspondante
+                    <i class="chevron right icon"></i>
+                </td>
+                <td>
+                    <select id="nomClasseEcolage" style="outline: none; padding: 4px 8px 4px 8px;">
+                    <?php
+                        while ($data=$req_build->fetch()) {
+                            echo "<option>".$data['nom_classe']."</option>";
+                        }
+                    ?>
+                    </select>
+                    
+                    <input type="number" min="0" class="input" placeholder="Saisir nouveau solde ..." id="soldeEcolageReg" /> <b>F CFA</b>&nbsp;&nbsp;
+                    <button class="ui violet button mini" style="border-radius: 0;" id="soldeEcolageRegBouton">
+                        <i class="cog icon"></i>Paramétrer
+                    </button>
+
+                    <div style="display: inline-block" id="successRegSoldeEcolage">
+                        
+                    </div>
+
+                </td>
+            </tr>
+            
+        </table>
+    </div>
+
+    <script>
+        
+        $(document).ready(function() {
+           
+           $('#soldeEcolageRegBouton').click(function() {
+
+               var soldeEcolageReg = $('#soldeEcolageReg').val();
+               var nomClasseEcolage = $('#nomClasseEcolage').val();
+
+               if (soldeEcolageReg!="") {
+
+                   $.post('/PROJET_ADEC/traitementsAjax/soldeEcolageParam.php', {soldeEcolageReg:soldeEcolageReg, nomClasseEcolage:nomClasseEcolage}, function(data) {
+                        $('#successRegSoldeEcolage').html("<div style='background-color: #baecbc; color: #238028; padding: 4px; width: 200px; font-size: 13px;'><center><b><i class='check icon'></i>Opération effectuée !</b></center></div>");
+                    });
+                   
+               }
+
+           });
+
+           $('#nomClasseEcolage').change(function() {
+                $('#successRegSoldeEcolage').html("");
+                $('#soldeEcolageReg').val("");
+            });
+
+        });
+        
+    </script>

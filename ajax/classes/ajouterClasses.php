@@ -1,6 +1,6 @@
     <?php
         require_once "../../includedPages/connect.php";
-        $req="SELECT * FROM niveaux ORDER BY num_niveau";
+        $req="SELECT * FROM niveaux ORDER BY num_niveau DESC";
         $req_build=$bdd->prepare($req);
         $req_exe=$req_build->execute();
     ?>
@@ -68,6 +68,7 @@
                         
                         $.post('/PROJET_ADEC/traitementsAjax/ajouterClasseSec.php', {niveauClasse:niveauClasse,nomClasse:nomClasse}, function(data) {
                             $('.successMessage').html(data);
+                            $('#nomClasse').val("");
                         });
 
                     } else {

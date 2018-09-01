@@ -1,8 +1,8 @@
 <?php
         require_once "../../includedPages/connect.php";
-        $req="SELECT * FROM niveaux ORDER BY num_niveau";
+        /*$req="SELECT * FROM niveaux ORDER BY num_niveau";
         $req_build=$bdd->prepare($req);
-        $req_exe=$req_build->execute();
+        $req_exe=$req_build->execute();*/
     ?>
 
     <div class="successMessage">

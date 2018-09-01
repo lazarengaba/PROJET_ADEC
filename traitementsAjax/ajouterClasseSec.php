@@ -38,5 +38,8 @@
         $('.greenSuccessMessageColored').click(function() {
             $(this).hide();
         });
+        $('.infoSuccessMessageColored').click(function() {
+            $(this).hide();
+        });
     });
 </script>

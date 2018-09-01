@@ -18,6 +18,13 @@
 
     <div style="border-bottom: 1px solid #ccc;"></div><br />
 
+    <?php
+        if ($nb_row==0) {
+            echo "<center><h3><b><i class='times icon'></i>Aucune classe n'a été répertoriée !</h3></b></center>";
+        } else {
+            
+    ?>
+    <center>
     <table class="tableAjoutEleve">
         <tr>
             <td width="200">
@@ -46,7 +53,7 @@
                 <input type="text" class="input" id="nomDeFamilleEleve">
             </td>
             <td>
-                Nom complet parent / tuteur
+                Nom complet parent / tuteur&nbsp;&nbsp;&nbsp;
             </td>
             <td>
                 <input type="text" class="input" id="nomParentEleve">
@@ -110,6 +117,13 @@
             </td>
         </tr>
     </table>
+    </center>
+
+    <?php
+
+        }
+
+    ?>
 
     <script>
         $('#inscrireEleveBouton').click(function() {

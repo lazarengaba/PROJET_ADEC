@@ -3,7 +3,7 @@
 
         $req="SELECT * FROM classes WHERE nom_classe LIKE ?";
         $req_build=$bdd->prepare($req);
-        $req_exe=$req_build->execute(array($_POST['chercheClasseModifier']."%"));
+        $req_exe=$req_build->execute(array("%".$_POST['chercheClasseModifier']."%"));
         $nb_row=$req_build->rowCount();
 
         $result = "Résultat";

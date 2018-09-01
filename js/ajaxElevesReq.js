@@ -7,6 +7,13 @@ $(document).ready(function() {
 		});
     });
 
+		$('.totalEeleves').click(function() {
+			$.post('ajax/eleves/totalEeleves.php', function(data) {
+				$('.containerPersonalisee').html("<br /><br /><br /><center><img src='images/ajax-loader (3).gif' /></center>");
+				$('.containerPersonalisee').html(data);
+			});
+			});
+
     $('.modifierEleve').click(function() {
 		$.post('ajax/eleves/modifierEleve.php', function(data) {
 			$('.containerPersonalisee').html("<br /><br /><br /><center><img src='images/ajax-loader (3).gif' /></center>");

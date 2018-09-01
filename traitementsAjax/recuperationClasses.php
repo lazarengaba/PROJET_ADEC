@@ -5,6 +5,13 @@
         $req_build=$bdd->prepare($req);
         $req_exe=$req_build->execute();
         $nb_row=$req_build->rowCount();
+
+        if ($nb_row==0) {
+            echo "<div style='border-bottom: 1px solid #ccc;'></div><br /><center><h3><b><i class='times icon'></i>Aucune classe n'a été répertoriée !</b></h3></center>";
+        } else {
+            # code...
+        }
+        
     ?>
     
     <table width="100%">
@@ -43,8 +50,3 @@
     ?>
 
     </table>
-
-    <script>
-
-       
-    </script>

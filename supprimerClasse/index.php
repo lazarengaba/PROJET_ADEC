@@ -9,7 +9,7 @@
 <div style="margin-left: 15px; font-size: 13px;">
     <input type="hidden" value="<?=$_GET['nomClasse']; ?>" class="input" style="width: 75px;" id="ancienNomClasse" >
     
-    Voulez - vous vraiment supprimer la classe <b><?=$_GET['nomClasse']; ?> ?</b>
+    Voulez - vous vraiment supprimer la classe <b><?=$_GET['nomClasse']; ?> ?</b> <span style="color: red;">Cette action sera irréversible et entraînra la perte de toutes les données relatives.</span>&nbsp;&nbsp;
 
     <button class="ui red button mini" style="border-radius: 0; width: 110px;" id="modifierClasseBouton">
         <i class="trash icon"></i>Supprimer

@@ -1,7 +1,7 @@
 <?php
         require_once "../includedPages/connect.php";
 
-        $req="SELECT * FROM eleves WHERE nom_de_famille LIKE ? OR prenom LIKE ? OR mle LIKE ? ORDER BY nom_de_famille";
+        $req="SELECT * FROM eleves LEFT OUTER JOIN classes ON classe_eleve = id_classe WHERE nom_de_famille LIKE ? OR prenom LIKE ? OR mle LIKE ? ORDER BY nom_de_famille";
         $req_build=$bdd->prepare($req);
         $req_exe=$req_build->execute(array("%".$_POST['chercheClasseModifier']."%", "%".$_POST['chercheClasseModifier']."%", "%".$_POST['chercheClasseModifier']."%"));
         $nb_row=$req_build->rowCount();
@@ -26,7 +26,7 @@
                     <?=$data['prenom']; ?>
                 </td>
                 <td>
-                    <?=$data['classe_eleve']; ?>
+                    <?=$data['nom_classe']; ?>
                 </td>
                 <td>
                     <?=$data['mle']; ?>
