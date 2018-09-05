@@ -3,6 +3,7 @@
         $req="SELECT * FROM classes LEFT OUTER JOIN niveaux ON niveau_classe = nom_niveau ORDER BY num_niveau DESC";
         $req_build=$bdd->prepare($req);
         $req_exe=$req_build->execute();
+        $req_check=$req_build->rowCount($req);
     ?>
 
     <div class="successMessage">
@@ -17,10 +18,15 @@
     </div>
     
     <div style="font-size: 13px;">
+    <?php
+        if (!$req_check) {
+            echo "<div class='ui red segment' style='font-size: 13px;'><center><b>Aucune classe n'a été répertoriée !</b></center></div>";
+        } else {
+    ?>
         <table>
             <tr>
                 <td>
-                    Sélectiionnez la classe correspondante
+                    Sélectionnez la classe correspondante
                     <i class="chevron right icon"></i>
                 </td>
                 <td>
@@ -45,6 +51,10 @@
             </tr>
             
         </table>
+
+        <?php
+             }
+        ?>
     </div>
 
     <script>

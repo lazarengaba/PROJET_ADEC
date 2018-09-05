@@ -37,8 +37,9 @@
                 ?>
                 </select>
                 <select style="outline: none; padding: 4px 8px 4px 8px; font-size: 13px;" id="semestre">
-                    <option value="semestreI">Semestre I</option>
-                    <option value="semestreII">Semestre II</option>
+                    <option value="trimestreI">Trimestre I</option>
+                    <option value="trimestreII">Trimestre II</option>
+                    <option value="trimestreIII">Trimestre III</option>
                 </select>
                 </td>
                 <td>

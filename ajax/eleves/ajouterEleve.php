@@ -12,15 +12,13 @@
 
     <div class="ajouterClasseContainer"><br />
         <div class="title">
-            <i class="plus icon"></i><b>Ajouter un (e) élève</b><br /><br />
+            <i class="plus icon"></i><b>Ajouter un (e) élève</b><br />
         </div>
     </div>
 
-    <div style="border-bottom: 1px solid #ccc;"></div><br />
-
     <?php
         if ($nb_row==0) {
-            echo "<center><h3><b><i class='times icon'></i>Aucune classe n'a été répertoriée !</h3></b></center>";
+            echo "<div class='ui red segment' style='font-size: 13px;'><center><b>Aucune classe n'a été répertoriée !</b></center></div>";
         } else {
             
     ?>
@@ -74,7 +72,7 @@
         <tr>
             <td>Date de naissance</td>
             <td>
-                <input type="text" class="input" id="dateNaissEleve">
+                <input type="date" class="input" id="dateNaissEleve">
             </td>
             <td>
                 Contact

@@ -1,13 +1,20 @@
 <?php
         require_once "../../includedPages/connect.php";
-
-        $req_matieres=$bdd->prepare("SELECT * FROM matieres LEFT OUTER JOIN enseignement ON matieres.id = matiere GROUP BY nom_matiere");
+        $res_SQL="SELECT * FROM matieres LEFT OUTER JOIN enseignement ON matieres.id = matiere GROUP BY nom_matiere";
+        $req_matieres=$bdd->prepare($res_SQL);
         $req_matieres_exe=$req_matieres->execute();
+        $req_matieres_rows=$req_matieres->rowCount($res_SQL);
 
     ?>
 
     <div class="successMessage"></div>
-
+    
+    <?php
+        if (!$req_matieres_rows) {
+            echo "<div class='ui red segment' style='font-size: 13px;'><center><b>Aucune matière n'a été enregistrée !</b></center></div>";
+        } else {
+       
+    ?>
 
     <div class="ajouterClasseContainer"><br />
         <div class="title">
@@ -60,6 +67,11 @@
             </center>
         </div>
     </div>
+
+    <?php
+         }
+        
+    ?>
 
     
     <script>

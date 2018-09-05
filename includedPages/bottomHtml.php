@@ -1,3 +1,4 @@
+        </div>
         <script src="/PROJET_ADEC/js/jquery compressed-3.2.1.min.js"></script>
         <!--<script src="jquery-ui/jquery-ui.min.js"></script>-->
         <script src="/PROJET_ADEC/css/semantic/dist/semantic.min.js"></script>
@@ -12,6 +13,8 @@
         <script src="/PROJET_ADEC/js/ajaxPlanningReq.js"></script>
         <script src="/PROJET_ADEC/js/ajaxDepensesReq.js"></script>
         <script src="/PROJET_ADEC/js/ajaxCaisseReq.js"></script>
+        <script src="/PROJET_ADEC/js/ajaxUsers.js"></script>
         <script src="/PROJET_ADEC/js/genScriptReg.js"></script>
+        <script src="/PROJET_ADEC/js/ajaxMessages.js"></script>
     </body>
 </html>

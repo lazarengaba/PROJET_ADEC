@@ -223,7 +223,7 @@
                         </div>
                     </a>
                 </td>
-                <td width="70">
+                <!--<td width="70">
                     <a href="#" class="impressionNotes">
                         <div class="icnSousMenu">
                             <img src="images/Print_48px.png" width="40" alt="Impression">
@@ -233,7 +233,7 @@
                             </div>
                         </div>
                     </a>
-                </td>
+                </td>-->
                 <td width="70">
                     <a href="#" class="aideNotes">
                         <div class="icnSousMenu">

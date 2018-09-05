@@ -3,6 +3,7 @@
         $req="SELECT * FROM classes LEFT OUTER JOIN niveaux ON niveau_classe = nom_niveau ORDER BY num_niveau DESC";
         $req_build=$bdd->prepare($req);
         $req_exe=$req_build->execute();
+        $req_rows=$req_build->rowCount($req);
     ?>
 
     <div class="successMessage">
@@ -11,10 +12,15 @@
 
     <div class="ajouterClasseContainer"><br />
         <div class="title">
-            <i class="cog icon"></i><b>Paramètres généraux solde écolage</b><br /><br />
+            <i class="cog icon"></i><b>Paramètres généraux solde écolage</b><br />
 
         </div>
-    </div>    
+    </div>
+    <?php
+        if(!$req_rows) {
+            echo "<div class='ui red segment' style='font-size: 13px;'><center><b>Aucune classe n'a été répertoriée !</b></center></div>";
+        } else {
+    ?>   
         <center>
         <table class="soldeEcolageTab" width="85%" style="border-collapse: collapse;">
             <tr>
@@ -48,7 +54,9 @@
 
         </table>
         </center>
-
+        <?php
+            }
+        ?>
     </div>
 
     <script>

@@ -15,7 +15,7 @@
         $req_rows=$req_build->rowCount($req);
 
         if (!$req_rows) {
-            echo "<br /><hr /><br /><center><b><i class='times icon'></i>Aucune correspondance d'élève !</b></center>";
+            echo "<br /><div class='ui red segment' style='font-size: 13px;'><center><b>Aucune correspondance d'élève !</b></center></div>";
         } else {
 
             $res_SQL="SELECT * FROM (classes LEFT OUTER JOIN enseignement ON id_classe = classe) LEFT OUTER JOIN matieres ON matiere = matieres.id WHERE id_classe = ? AND nom_matiere IS NOT NULL";
@@ -24,7 +24,7 @@
             $rowMat=$req->rowCount($res_SQL);
             
             if (!$rowMat) {
-                echo "<br /><hr /><br /><center><b><i class='times icon'></i>Aucune correspondance matière !</b></center>";
+                echo "<br /><hr /><br /><center><b><i class='times icon'></i>Aucune correspondance de matière !</b></center>";
             } else {
                 
 
@@ -53,7 +53,10 @@
                         <center><b>Matricule</b></center>
                     </td>
                     <td width="200">
-                        <center><b>Note sur 20</b></center>
+                        <center><b>Note1 sur 20</b></center>
+                    </td>
+                    <td width="200">
+                        <center><b>Note2 sur 20</b></center>
                     </td>
                 </tr>
                     <?php
@@ -76,7 +79,10 @@
                                     <center><b><?=$data['mle']; ?></b></center>
                                 </td>
                                 <td width="200">
-                                    <input type="number" min="0" max="20" class="input" name="note<?=$i; ?>">
+                                    <input type="number" min="0" max="20" class="input" name="note1<?=$i; ?>">
+                                </td>
+                                <td width="200">
+                                    <input type="number" min="0" max="20" class="input" name="note2<?=$i; ?>">
                                 </td>
                             </tr>
                     <?php
@@ -85,7 +91,7 @@
 
                     ?>
                     <tr>
-                        <td colspan="5">
+                        <td colspan="6">
                         <button type="submit" class="ui green button tiny" id="submitNotes" style="border-radius: 0; float: right;">
                             <i class="save icon"></i>Sauvegarder les notes
                         </button>

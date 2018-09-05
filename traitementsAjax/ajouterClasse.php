@@ -13,12 +13,12 @@
             switch ($init_nb) {
                 case 0:
                     $insert=$bdd->prepare("INSERT INTO classes (niveau_classe, nom_classe) VALUES (?, ?)");
-                    $insert_exe=$insert->execute(array($_POST['niveauClasse'], $_POST['niveauClasse']." A"));
+                    $insert_exe=$insert->execute(array($_POST['niveauClasse'], $_POST['niveauClasse']." I"));
                     $insert->closeCursor();
         ?>
                     <div class="greenSuccessMessageColored">
                         <i class="check icon"></i>
-                        Classe <?=$_POST['niveauClasse']." A"; ?> ajoutée avec succès !
+                        Classe <?=$_POST['niveauClasse']." I"; ?> ajoutée avec succès !
                     </div>
         <?php
         
@@ -26,24 +26,36 @@
 
                 case 1:
                     $insert=$bdd->prepare("INSERT INTO classes (niveau_classe, nom_classe) VALUES (?, ?)");
-                    $insert_exe=$insert->execute(array($_POST['niveauClasse'], $_POST['niveauClasse']." B"));
+                    $insert_exe=$insert->execute(array($_POST['niveauClasse'], $_POST['niveauClasse']." II"));
                     $insert->closeCursor();
         ?>
                     <div class="greenSuccessMessageColored">
                         <i class="check icon"></i>
-                        Classe <?=$_POST['niveauClasse']." B"; ?> ajoutée avec succès !
+                        Classe <?=$_POST['niveauClasse']." II"; ?> ajoutée avec succès !
                     </div>
         <?php
                     break;
 
                 case 2:
                     $insert=$bdd->prepare("INSERT INTO classes (niveau_classe, nom_classe) VALUES (?, ?)");
-                    $insert_exe=$insert->execute(array($_POST['niveauClasse'], $_POST['niveauClasse']." C"));
+                    $insert_exe=$insert->execute(array($_POST['niveauClasse'], $_POST['niveauClasse']." III"));
                     $insert->closeCursor();
         ?>
                     <div class="greenSuccessMessageColored">
                         <i class="check icon"></i>
-                        Classe <?=$_POST['niveauClasse']." C"; ?> ajoutée avec succès !
+                        Classe <?=$_POST['niveauClasse']." III"; ?> ajoutée avec succès !
+                    </div>
+        <?php
+                    break;
+
+                    case 3:
+                    $insert=$bdd->prepare("INSERT INTO classes (niveau_classe, nom_classe) VALUES (?, ?)");
+                    $insert_exe=$insert->execute(array($_POST['niveauClasse'], $_POST['niveauClasse']." IV"));
+                    $insert->closeCursor();
+        ?>
+                    <div class="greenSuccessMessageColored">
+                        <i class="check icon"></i>
+                        Classe <?=$_POST['niveauClasse']." IV"; ?> ajoutée avec succès !
                     </div>
         <?php
                     break;

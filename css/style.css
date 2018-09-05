@@ -1,3 +1,4 @@
+#body{min-width: 1000px;}
 .topBar{height: 35px; background-color: #3A5199;line-height: 35px;}
 .topBar .version{font-size: 13px; color: #FFF; float: right; margin-right: 15px;}
 .topBar, .topBar a{color: #FFF;}
@@ -35,6 +36,7 @@
 
 .greenSuccessMessageColored{background-color: #baecbc; color: #238028; padding: 7px; width: 100%; margin-top: 5px; font-size: 13px;}
 .infoSuccessMessageColored{background-color: #addcfc; padding: 7px; width: 100%; margin-top: 5px; color: #3A5199; font-size: 13px;}
+.redSuccessMessageColored{background-color: #fabdbd; padding: 7px; width: 100%; margin-top: 5px; color: #c41616; font-size: 13px;}
 
 .listeClasses table tr td{font-size: 12px; color: #777; padding: 5px 0;}
 .tableAjoutEleve tr td{padding: 5px 0;}
@@ -46,3 +48,5 @@
 .etatEcolage{background-color: #777; color: #fff; padding: 5px;text-align: center;}
 
 .ui.table tr td, .ui.table{border-color: #aaa;}
+
+.inputT{outline: none; width: auto; border: 1px solid #ccc; padding: 7px;}

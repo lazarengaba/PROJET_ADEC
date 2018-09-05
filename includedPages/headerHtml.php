@@ -11,4 +11,4 @@
     <title><?=$titre?></title>
 </head>
 <body>
-    
+    <div id="body">

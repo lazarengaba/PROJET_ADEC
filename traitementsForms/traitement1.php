@@ -8,15 +8,15 @@
     for ($i=1; $i <= $_POST['LIGNES']; $i++) {
         
 
-        if ($_POST['note'.$i]==""||strlen($_POST['matiere'])==0) {
+        if ($_POST['note1'.$i]=="" || $_POST['note2'.$i]=="" || strlen($_POST['matiere'])==0) {
 
             $testOK+=1;
 ?>
 
 <?php
         } else {
-            $insert = $bdd->prepare("INSERT INTO notes (mle_note, note_classe, note_matiere, note_semestre,note_note) VALUES (?,?,?,?,?)");
-            $insert_exe = $insert->execute(array($_POST['noteMle'.$i], $_POST['classe'],$_POST['matiere'],$_POST['semestre'],$_POST['note'.$i]));
+            $insert = $bdd->prepare("INSERT INTO notes (mle_note, note_classe, note_matiere, note_semestre,note_note1, note_note2) VALUES (?,?,?,?,?,?)");
+            $insert_exe = $insert->execute(array($_POST['noteMle'.$i], $_POST['classe'],$_POST['matiere'],$_POST['semestre'],$_POST['note1'.$i], $_POST['note2'.$i]));
     
         $insert->closeCursor();
 ?>
@@ -47,7 +47,7 @@
                 <b>Les notes on été enregistrées avec succès !</b>
             </div><br /><br />
         
-            <a href="/PROJET_ADEC/" class="ui violet button" style="border-radius: 2px;">
+            <a href="../indexAdmin.php" class="ui violet button" style="border-radius: 2px;">
                 <i class="refresh icon"></i>Rafraichir
             </a>
         

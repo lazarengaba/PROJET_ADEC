@@ -17,7 +17,7 @@
         <div class="title">
             <?php
                 if (!$req_matieres_rows) {
-                    echo "<center><i class=\"times icon\"></i><b>Aucune matière n'a été référencée !</b></center>";
+                    echo "<div class='ui red segment' style='font-size: 13px;'><center><b>Aucune matière n'a été répertoriée !</b></center></div>";
                 } else {
                
             ?>

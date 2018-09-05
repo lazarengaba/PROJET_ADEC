@@ -1,12 +1,21 @@
 <?php
         require_once "../../includedPages/connect.php";
 
-        $req_matieres=$bdd->prepare("SELECT * FROM matens LEFT OUTER JOIN enseignants ON enseignant = mle_enseignant GROUP BY nom_enseignant");
+        $req_SQL="SELECT * FROM matens LEFT OUTER JOIN enseignants ON enseignant = mle_enseignant GROUP BY nom_enseignant";
+        $req_matieres=$bdd->prepare($req_SQL);
         $req_matieres_exe=$req_matieres->execute();
+        $rows_req=$req_matieres->rowCount($req_SQL);
 
     ?>
 
     <div class="successMessage"></div>
+
+    <?php
+        if (!$rows_req) {
+            echo "<div class='ui red segment' style='font-size: 13px;'><center><b>Aucune matière n'a été reférencée !</b></center></div>";
+        } else {
+        
+    ?>
 
     <div class="ajouterClasseContainer"><br />
         <div class="title">
@@ -66,6 +75,10 @@
             </center>
         </div>
     </div>
+
+    <?php
+        }
+    ?>
 
     
     <script>

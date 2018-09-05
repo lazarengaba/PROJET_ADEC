@@ -7,7 +7,7 @@
         $nb_row=$req_build->rowCount();
 
         if ($nb_row==0) {
-            echo "<div style='border-bottom: 1px solid #ccc;'></div><br /><center><h3><b><i class='times icon'></i>Aucune classe n'a été répertoriée !</b></h3></center>";
+            echo "<div class='ui red segment' style='font-size: 13px;'><center><b>Aucune classe n'a été répertoriée !</b></center></div>";
         } else {
             # code...
         }

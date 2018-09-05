@@ -17,7 +17,7 @@
     </div>
     
     <div style="font-size: 13px; text-align: center;">
-        <div class="ui buttons" style="width: 50%;">
+        <div class="ui buttons tiny" style="width: 50%;">
             <a target="_blank" href="/PROJET_ADEC/ecolageSolde/" class="ui green button" style="border-radius: 0;">
                 <i class="check icon"></i>Ecolage totalement soldé
             </a>
@@ -27,7 +27,7 @@
             <a target="_blank" href="/PROJET_ADEC/ecolageNonSolde/" class="ui red button" style="border-radius: 0;">
                 <i class="times icon"></i>Ecolage au solde non versé
             </a>
-        </div><br /><br /><br /><hr />
+        </div><br /><br /><hr />
     </div>
 
     <script>
