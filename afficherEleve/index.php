@@ -34,9 +34,11 @@
                 <b><?=$data['nom_classe']; ?></b>&nbsp;&nbsp;
                 <span style="background-color: #e44b1c;padding: 5px; color: #fff; border-radius: 2px;"><b><?=$data['mle']; ?></b></span>
             </td>
-            <td width="250" colspan="2">
-                <b>INFO PARENT / TUTEUR</b>
-                <div style="border-bottom: 1px solid #ccc;"></div><br />
+            <td width="250">
+                Nom complet parent / tuteur&nbsp;&nbsp;
+            </td>
+            <td>
+                <b><?=$data['nom_complet_tuteur']; ?></b>
             </td>
         </tr>
         <tr>
@@ -47,10 +49,10 @@
                 <b><?=$data['nom_de_famille']; ?></b>
             </td>
             <td>
-                Nom complet parent / tuteur&nbsp;&nbsp;
+                Profession
             </td>
             <td>
-                <b><?=$data['nom_complet_tuteur']; ?></b>
+                <b><?=$data['profession_tuteur']; ?></b>
             </td>
         </tr>
         <tr>

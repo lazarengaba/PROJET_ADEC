@@ -15,9 +15,9 @@
     } else {
     
 
-    $insert=$bdd->prepare("INSERT INTO eleves VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+    $insert=$bdd->prepare("INSERT INTO eleves VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
     $insert_exe=$insert->execute(array($_POST['matriculeEleve'], $dataClasse['id_classe'],0, $_POST['nomDeFamilleEleve'], $_POST['prenomEleve'], $_POST['dateNaissEleve'],$_POST['lieuNaissEleve'],
-                                        $_POST['sexeEleve'], $_POST['nomParentEleve'], $_POST['adresseParentEleve'], $_POST['contactParentEleve'], $_POST['civiliteParentEleve']));
+                                        $_POST['sexeEleve'], $_POST['nomParentEleve'], $_POST['adresseParentEleve'], $_POST['contactParentEleve'], $_POST['civiliteParentEleve'],$_POST['professionParentEleve']));
 ?>
 
 

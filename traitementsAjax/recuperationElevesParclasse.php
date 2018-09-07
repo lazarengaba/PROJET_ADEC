@@ -7,12 +7,16 @@
         $nb_row=$req_build->rowCount();
 
         if ($nb_row==0) {
-            echo "<div style='border-bottom: 1px solid #ccc;'></div><br /><center><h3><b><i class='times icon'></i>Aucun (e) élève n'a été répertorié (e) !</b></h3></center>";
+            echo "<div class='ui red segment' style='font-size: 13px;'><center><b><i class='times icon'></i>Aucun (e) élève n'a été répertorié (e) !</b></center></div><br />";
         } else {
+            $i=0;
     ?>
             <br />
             <table class="soldeEcolageTab" width="100%" style="border-collapse: collapse;">
                 <tr>
+                    <td>
+                        <center><b>N°</b></center>  
+                    </td>
                     <td>
                         <center><b>Matricule</b></center>  
                     </td>
@@ -37,6 +41,9 @@
             while ($data=$req_build->fetch()) {
     ?>
                 <tr>
+                    <td>
+                        <center><?=($i+=1); ?></center>
+                    </td>
                     <td>
                         <?=$data['mle']; ?>
                     </td>

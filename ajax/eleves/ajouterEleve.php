@@ -4,6 +4,11 @@
         $req_build=$bdd->prepare($req);
         $req_exe=$req_build->execute();
         $nb_row=$req_build->rowCount();
+
+        $mat=$bdd->prepare("SELECT MAX(mle) ndernierMat FROM eleves");
+        $mat_exe=$mat->execute();
+        $mat_nb=$mat->fetch();
+
     ?>
 
     <div class="successMessage">
@@ -36,11 +41,13 @@
                 }
             ?>
                 </select>
-                <input type="text" class="input" id="matriculeEleve" style="width: 103px;" placeholder="Matricule ...">
+                <input type="text" class="input" id="matriculeEleve" style="width: 103px;" placeholder="Matricule ..." value="<?=($mat_nb['ndernierMat']+1); ?>">
             </td>
-            <td width="250" colspan="2">
-                <b>INFO PARENT / TUTEUR</b>
-                <div style="border-bottom: 1px solid #ccc;"></div><br />
+            <td width="200">
+                Nom complet parent / tuteur&nbsp;&nbsp;&nbsp;
+            </td>
+            <td>
+                <input type="text" class="input" id="nomParentEleve">
             </td>
         </tr>
         <tr>
@@ -51,10 +58,10 @@
                 <input type="text" class="input" id="nomDeFamilleEleve">
             </td>
             <td>
-                Nom complet parent / tuteur&nbsp;&nbsp;&nbsp;
+                Profession
             </td>
             <td>
-                <input type="text" class="input" id="nomParentEleve">
+                <input type="text" class="input" id="professionParentEleve">
             </td>
         </tr>
         <tr>
@@ -102,7 +109,7 @@
             <td>
                 <select style="outline: none; padding: 4px 8px 4px 8px;" id="sexeEleve">
                     <option value="Masculin">Masculin</option>
-                    <option value="Feminin">Feminin</option>
+                    <option value="Féminin">Féminin</option>
                 </select>
             </td>
             <td>
@@ -137,8 +144,9 @@
             var lieuNaissEleve = $('#lieuNaissEleve').val();
             var civiliteParentEleve = $('#civiliteParentEleve').val();
             var sexeEleve = $('#sexeEleve').val();
+            var professionParentEleve = $('#professionParentEleve').val();
 
-            if (matriculeEleve!=""&&nomDeFamilleEleve!=""&&nomParentEleve!=""&&prenomEleve!=""&&adresseParentEleve!=""&&dateNaissEleve!=""&&contactParentEleve!=""&&lieuNaissEleve!="") {
+            if (matriculeEleve!=""&&nomDeFamilleEleve!=""&&nomParentEleve!=""&&prenomEleve!=""&&adresseParentEleve!=""&&dateNaissEleve!=""&&contactParentEleve!=""&&lieuNaissEleve!=""&&professionParentEleve!="") {
                 $.post('/PROJET_ADEC/traitementsAjax/inscrireEleve.php',{
                     matriculeEleve:matriculeEleve,
                     classeEleve:classeEleve,
@@ -150,7 +158,8 @@
                     contactParentEleve:contactParentEleve,
                     lieuNaissEleve:lieuNaissEleve,
                     civiliteParentEleve:civiliteParentEleve,
-                    sexeEleve:sexeEleve
+                    sexeEleve:sexeEleve,
+                    professionParentEleve:professionParentEleve
                 }, function(data) {
                     $('.successMessage').html(data);
                     $('#matriculeEleve').val("");
@@ -161,6 +170,7 @@
                     $('#dateNaissEleve').val("");
                     $('#contactParentEleve').val("");
                     $('#lieuNaissEleve').val("");
+                    $('#professionParentEleve').val("");
                 });
             } else {
                 $('.successMessage').html("<div style='background-color: #fab5b5; color: #e20a0a; padding: 4px 15px; text-align: center; margin-top: 5px;'>Impossible de retourner un champs vide !</div>");

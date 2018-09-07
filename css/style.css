@@ -50,3 +50,5 @@
 .ui.table tr td, .ui.table{border-color: #aaa;}
 
 .inputT{outline: none; width: auto; border: 1px solid #ccc; padding: 7px;}
+
+.resultatRechercheEleveRecu{display: none; position: absolute; height: 100px; background-color: #fff; border: 1px solid #aaa;}

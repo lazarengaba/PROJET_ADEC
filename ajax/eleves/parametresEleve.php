@@ -15,7 +15,7 @@
             <i class="cog icon"></i><b>Paramètres généraux solde écolage</b><br />
 
         </div>
-    </div>
+    </div><br /><br />
     <?php
         if(!$req_rows) {
             echo "<div class='ui red segment' style='font-size: 13px;'><center><b>Aucune classe n'a été répertoriée !</b></center></div>";

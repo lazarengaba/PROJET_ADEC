@@ -27,7 +27,7 @@
             </select>
 
         </div>
-    </div>
+    </div><br />
 
     <div class="listeEleves"></div>
 

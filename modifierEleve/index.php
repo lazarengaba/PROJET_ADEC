@@ -33,9 +33,11 @@
                 <span style="background-color: #e44b1c;padding: 5px; color: #fff; border-radius: 2px;"><b><?=$data['mle']; ?></b></span>
                 <input type="hidden" id="matriculeEleve" style="width: 103px;" placeholder="Matricule ..." value="<?=$data['mle']; ?>" >
             </td>
-            <td width="250" colspan="2">
-                <b>INFO PARENT / TUTEUR</b>
-                <div style="border-bottom: 1px solid #ccc;"></div><br />
+            <td width="200">
+                Nom complet parent / tuteur
+            </td>
+            <td>
+                <input type="text" class="input" id="nomParentEleve" value="<?=$data['nom_complet_tuteur']; ?>">
             </td>
         </tr>
         <tr>
@@ -46,10 +48,10 @@
                 <input type="text" class="input" id="nomDeFamilleEleve" value="<?=$data['nom_de_famille']; ?>">
             </td>
             <td>
-                Nom complet parent / tuteur
+                Profession
             </td>
             <td>
-                <input type="text" class="input" id="nomParentEleve" value="<?=$data['nom_complet_tuteur']; ?>">
+                <input type="text" class="input" id="professionParentEleve" value="<?=$data['profession_tuteur']; ?>">
             </td>
         </tr>
         <tr>
@@ -144,6 +146,7 @@
             var lieuNaissEleve = $('#lieuNaissEleve').val();
             var civiliteParentEleve = $('#civiliteParentEleve').val();
             var sexeEleve = $('#sexeEleve').val();
+            var professionParentEleve = $('#professionParentEleve').val();
 
             if (matriculeEleve!=""&&nomDeFamilleEleve!=""&&nomParentEleve!=""&&prenomEleve!=""&&adresseParentEleve!=""&&dateNaissEleve!=""&&contactParentEleve!=""&&lieuNaissEleve!="") {
                 $.post('/PROJET_ADEC/modifierEleve/control.php',{
@@ -157,7 +160,8 @@
                     contactParentEleve:contactParentEleve,
                     lieuNaissEleve:lieuNaissEleve,
                     civiliteParentEleve:civiliteParentEleve,
-                    sexeEleve:sexeEleve
+                    sexeEleve:sexeEleve,
+                    professionParentEleve:professionParentEleve
                 }, function(data) {
                     window.close();
 

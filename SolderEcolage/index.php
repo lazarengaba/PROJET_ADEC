@@ -127,7 +127,7 @@
     <script>
 
         $('#montantVersementEcolage').keyup(function() {
-            if($(this).val().length == $('#resteSoldeEcolage').val().length && $(this).val() > $('#resteSoldeEcolage').val()) {
+            if($(this).val().length >= $('#resteSoldeEcolage').val().length && $(this).val() > $('#resteSoldeEcolage').val()) {
                 alert( "Le montant entré est excédent sur le reste à verser");
                 $('#montantVersementEcolage').val("");
             }
