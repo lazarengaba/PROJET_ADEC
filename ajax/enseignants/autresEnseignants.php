@@ -34,20 +34,16 @@
             ?>
             </select>
 
-            <select style="outline: none; padding: 4px 8px 4px 8px; font-size: 13px;" id="classes">
-            <?php
-                while ($data_classes=$req_classes->fetch()) {
-                    echo "<option value='".$data_classes['id']."'>".$data_classes['nom_matiere']."</option>";
-                }
-            ?>
-            </select>
-            
             <select style="outline: none; padding: 4px 8px 4px 8px; font-size: 13px;" id="classesEns">
             <?php
                 while ($data=$req->fetch()) {
                     echo "<option value='".$data['id_classe']."'>".$data['nom_classe']."</option>";
                 }
             ?>
+            </select>
+
+            <select style="outline: none; padding: 4px 8px 4px 8px; font-size: 13px;" id="classes">
+                
             </select>
 
             <button class="ui button violet mini" style="border-radius: 0;" id="ajouterClasseBtn">
@@ -67,13 +63,28 @@
     <script>
         $(document).ready(function() {
 
+            var classesEns = $('#classesEns').val();
+            
+            $.post("/PROJET_ADEC/traitementsAjax/rechercheMatieresEns.php", {classesEns:classesEns}, function(data) {
+                $('#classes').html(data);
+            });
+
+            $('#classesEns').change(function() {
+                var classesEns = $(this).val();
+                
+                $.post("/PROJET_ADEC/traitementsAjax/rechercheMatieresEns.php", {classesEns:classesEns}, function(data) {
+                    $('#classes').html(data);
+                });
+            });
+
+
             $('#ajouterClasseBtn').click(function() {
 
                 var matieres=$('#matieres').val();
-                var classes=$('#classes').val();
                 var classesEns=$('#classesEns').val();
+                var classes=$('#classes').val();
 
-                $.post('/PROJET_ADEC/traitementsAjax/ajouterMatiereEnseignant.php', {matieres:matieres,classes:classes, classesEns:classesEns}, function(data) {
+                $.post('/PROJET_ADEC/traitementsAjax/ajouterMatiereEnseignant.php', {matieres:matieres, classesEns:classesEns, classes:classes}, function(data) {
                     $('.successMessage').html(data);
                 });
 

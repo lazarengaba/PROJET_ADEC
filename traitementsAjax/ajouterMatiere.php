@@ -2,9 +2,9 @@
 
 require_once "../includedPages/connect.php";
 
-    $req="SELECT * FROM matieres WHERE nom_matiere = ?";
+    $req="SELECT * FROM matieres WHERE nom_matiere = ? AND id_classe = ?";
     $req_build=$bdd->prepare($req);
-    $req_exe=$req_build->execute(array($_POST['nomMatiere']));
+    $req_exe=$req_build->execute(array($_POST['nomMatiere'], $_POST['classe']));
     $check=$req_build->rowCount($req);
 
     if ($check) {
@@ -16,8 +16,8 @@ require_once "../includedPages/connect.php";
 <?php
     } else {
     
-        $insert=$bdd->prepare("INSERT INTO matieres (nom_matiere, coeff_matiere) VALUES (?, ?)");
-        $insert_exe=$insert->execute(array($_POST['nomMatiere'], $_POST['coeffMatiere']));
+        $insert=$bdd->prepare("INSERT INTO matieres (id_classe, nom_matiere, coeff_matiere) VALUES (?, ?, ?)");
+        $insert_exe=$insert->execute(array($_POST['classe'], $_POST['nomMatiere'], $_POST['coeffMatiere']));
         $insert->closeCursor();
 ?>
         <div class="greenSuccessMessageColored">

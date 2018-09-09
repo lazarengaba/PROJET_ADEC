@@ -137,28 +137,6 @@
                     </a>
                 </td>
                 <td width="70">
-                    <a href="#" class="engagementsEcolage">
-                        <div class="icnSousMenu">
-                            <img src="images/Edit Property_48px.png" width="40" alt="Engagememnts">
-                            
-                            <div class="titreSousMenu">
-                                Engagements
-                            </div>
-                        </div>
-                    </a>
-                </td>
-                <td width="70">
-                    <a href="#" class="impressionEcolage">
-                        <div class="icnSousMenu">
-                            <img src="images/Print_48px.png" width="40" alt="Impression">
-                            
-                            <div class="titreSousMenu">
-                                Impression
-                            </div>
-                        </div>
-                    </a>
-                </td>
-                <td width="70">
                     <a href="#" class="aideEcolage">
                         <div class="icnSousMenu">
                             <img src="images/Help_48px.png" width="40" alt="Aide">
@@ -223,17 +201,6 @@
                         </div>
                     </a>
                 </td>
-                <!--<td width="70">
-                    <a href="#" class="impressionNotes">
-                        <div class="icnSousMenu">
-                            <img src="images/Print_48px.png" width="40" alt="Impression">
-                            
-                            <div class="titreSousMenu">
-                                Impression
-                            </div>
-                        </div>
-                    </a>
-                </td>-->
                 <td width="70">
                     <a href="#" class="aideNotes">
                         <div class="icnSousMenu">
@@ -241,17 +208,6 @@
                             
                             <div class="titreSousMenu">
                                 Aide
-                            </div>
-                        </div>
-                    </a>
-                </td>
-                <td width="70">
-                    <a href="#" class="AutresNotes">
-                        <div class="icnSousMenu">
-                            <img src="images/More_48px.png" width="40" alt="Autres">
-                            
-                            <div class="titreSousMenu">
-                                Autres
                             </div>
                         </div>
                     </a>
@@ -386,17 +342,6 @@
                         </div>
                     </a>
                 </td>
-                <td width="70">
-                    <a href="#" class="autresMatieres">
-                        <div class="icnSousMenu">
-                            <img src="images/More_48px.png" width="40" alt="Autres">
-                            
-                            <div class="titreSousMenu">
-                                Autres
-                            </div>
-                        </div>
-                    </a>
-                </td>
                 <td></td>
             </tr>
         </table>
@@ -458,17 +403,6 @@
                             
                             <div class="titreSousMenu">
                                 Aide
-                            </div>
-                        </div>
-                    </a>
-                </td>
-                <td width="70">
-                    <a href="#" class="autresClasses">
-                        <div class="icnSousMenu">
-                            <img src="images/More_48px.png" width="40" alt="Autres">
-                            
-                            <div class="titreSousMenu">
-                                Autres
                             </div>
                         </div>
                     </a>

@@ -1,6 +1,6 @@
 <?php
         require_once "../../includedPages/connect.php";
-        $res_SQL="SELECT * FROM matieres LEFT OUTER JOIN enseignement ON matieres.id = matiere GROUP BY nom_matiere";
+        $res_SQL="SELECT * FROM matieres M LEFT OUTER JOIN classes C ON M.id_classe = C.id_classe ORDER BY nom_classe";
         $req_matieres=$bdd->prepare($res_SQL);
         $req_matieres_exe=$req_matieres->execute();
         $req_matieres_rows=$req_matieres->rowCount($res_SQL);
@@ -37,9 +37,6 @@
                 <?php
                     while ($data=$req_matieres->fetch()) {
 
-                        $sel=$bdd->prepare("SELECT * FROM enseignement LEFT OUTER JOIN classes ON classe = id_classe WHERE matiere = ?");
-                        $sel_exe=$sel->execute(array($data['matiere']));
-                        
                 ?>
                     <tr>
                         <td>
@@ -49,13 +46,8 @@
                             <center><b><?=$data['coeff_matiere']; ?></b><center>
                         </td>
                         <td>
-                            
-                        <?php
-                            while ($data_sel=$sel->fetch()) {
-                                echo "<center>".$data_sel['nom_classe']."</center>";
-                            }            
-                        ?>
-                            
+                            <center><b><?=$data['nom_classe']; ?></center>
+                        </td>
                 <?php
                         echo "</td></tr>";
 

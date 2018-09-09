@@ -1,7 +1,7 @@
 <?php
         require_once "../includedPages/connect.php";
 
-        $req="SELECT * FROM matieres WHERE nom_matiere LIKE ?";
+        $req="SELECT * FROM matieres M LEFT OUTER JOIN classes C ON M.id_classe = C.id_classe WHERE nom_matiere LIKE ?";
         $req_build=$bdd->prepare($req);
         $req_exe=$req_build->execute(array("%".$_POST['nomMatiereModif']."%"));
         $nb_row=$req_build->rowCount();
@@ -21,6 +21,9 @@
             <tr>
                 <td>
                     <?=$data['nom_matiere']; ?>
+                </td>
+                <td>
+                    <?=$data['nom_classe']; ?>
                 </td>
                 <td>
                     <?=$data['coeff_matiere']; ?>

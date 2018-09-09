@@ -9,11 +9,15 @@
     if ($req_check) {
         echo "<div class='infoSuccessMessageColored'><i class='info icon'></i>Cette attribution a déjà été effectuée !<div>";
     } else {
-        $insert=$bdd->prepare("INSERT INTO matens (enseignant, matiere_ens, classe_ens) VALUES (?,?,?)");
-        $insert_exe=$insert->execute(array($_POST['matieres'], $_POST['classes'], $_POST['classesEns']));
-        $insert->closeCursor();
+        if ($_POST['classes']!="") {
+            $insert=$bdd->prepare("INSERT INTO matens (enseignant, matiere_ens, classe_ens) VALUES (?,?,?)");
+            $insert_exe=$insert->execute(array($_POST['matieres'], $_POST['classes'], $_POST['classesEns']));
+            $insert->closeCursor();
 
-        echo "<div class='greenSuccessMessageColored'><i class='check icon'></i>Attribution effectuée avec succès !<div>";
+            echo "<div class='greenSuccessMessageColored'><i class='check icon'></i>Attribution effectuée avec succès !<div>";
+        } else {
+            echo "<div class='redSuccessMessageColored'><i class='info icon'></i>Aucune matière pour cette salle !<div>";
+        }
     }
     
     

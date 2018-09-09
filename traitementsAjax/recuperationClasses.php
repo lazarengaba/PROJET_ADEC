@@ -21,28 +21,15 @@
     ?>
             <tr>
                 <?php
-                    if ($data['num_niveau']>10) {
-                        echo "<td width='20%'><b>".$data['nom_classe']."</b></td>
-                            <td id='modifierClasse' width='30%'>
-                                <a href='#'>Modifier<i class='chevron right icon'></i>&nbsp;&nbsp;</a>
-                                <div style='width: 75px; display: inline-block;'><b>".$data['nom_classe']."</b></div>
-                                <a target='_blank' href='/PROJET_ADEC/modifierClasse/?nomClasse=".$data['nom_classe']."' class='ui violet button mini' style='border-radius: 0;'>Modifier la classe</a>
-                            </td>
-                            <td>
-                                <a class='ui red button mini' style='border-radius: 0;' target='_blank' href='/PROJET_ADEC/supprimerClasse/?nomClasse=".$data['nom_classe']."'><i class='delete icon'></i>Supprimer</a>
-                            </td>";
-                    } else {
-                        echo "<td width='20%'><b>".$data['nom_classe']."</b></td>
-                        <td>
-                            <a href='#'>Modifier<i class='chevron right icon'></i>&nbsp;&nbsp;</a>
-                            <div style='width: 75px; display: inline-block;'><b>".$data['nom_classe']."</b></div>
-                            <a class='ui button mini' style='border-radius: 0;'><i class='ban icon'></i>Non modifiable</a>
-                        </td>
-                        <td>
-                            <a class='ui red button mini' style='border-radius: 0;' target='_blank' href='/PROJET_ADEC/supprimerClasse/?nomClasse=".$data['nom_classe']."'><i class='delete icon'></i>Supprimer</a>
-                        </td>";
-                    }
-                        
+                    echo "<td width='20%'><b>".$data['nom_classe']."</b></td>
+                    <td id='modifierClasse' width='30%'>
+                        <a href='#'>Modifier<i class='chevron right icon'></i>&nbsp;&nbsp;</a>
+                        <div style='width: 75px; display: inline-block;'><b>".$data['nom_classe']."</b></div>
+                        <a target='_blank' href='/PROJET_ADEC/modifierClasse/?nomClasse=".$data['nom_classe']."' class='ui violet button mini' style='border-radius: 0;'><i class='edit icon'></i>Modifier la classe</a>
+                    </td>
+                    <td>
+                        <a class='ui red button mini' style='border-radius: 0;' target='_blank' href='/PROJET_ADEC/supprimerClasse/?nomClasse=".$data['nom_classe']."'><i class='trash icon'></i>Supprimer</a>
+                    </td>";                        
                 ?>
             </tr>
     <?php

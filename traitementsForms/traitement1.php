@@ -32,7 +32,7 @@
                     <b>l'opération n'a pas aboutie dûe à une incohérence données. Rafraichir puis réessayer</b>
                 </div><br /><br />
 
-                <a href="/PROJET_ADEC/" class="ui red button" style="border-radius: 2px;">
+                <a href="../indexAdmin.php" class="ui red button" style="border-radius: 2px;">
                     <i class="refresh icon"></i>Rafraichir
                 </a>
 

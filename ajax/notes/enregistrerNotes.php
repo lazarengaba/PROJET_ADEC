@@ -4,9 +4,7 @@
         $req_build=$bdd->prepare($req);
         $req_exe=$req_build->execute();
 
-        $reqM="SELECT * FROM matieres";
-        $req_buildM=$bdd->prepare($reqM);
-        $req_exeM=$req_buildM->execute();
+        
     ?>
     
 
@@ -57,8 +55,6 @@
     <script>
         
         $(document).ready(function() {
-
-            
 
             var classe = $('#classe').val();
            

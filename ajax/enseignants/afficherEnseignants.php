@@ -53,7 +53,7 @@
                             
                         <?php
                             while ($data_sel=$sel->fetch()) {
-                                echo "<center>".$data_sel['nom_matiere']."</center>";
+                                echo $data_sel['nom_matiere']."<br />" ;
                             }            
                         ?>
                             
@@ -61,7 +61,7 @@
                             
                             <?php
                                 while ($data_selC=$selC->fetch()) {
-                                    echo "<center>".$data_selC['nom_classe']."</center>";
+                                    echo $data_selC['nom_classe']."<br />" ;
                                 }            
                             ?>
                 <?php

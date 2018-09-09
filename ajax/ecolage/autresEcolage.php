@@ -9,7 +9,11 @@
     <div class="successMessage">
 
     </div>
-
+    <center>
+    <div style="display: inline-block;" id="successRegSoldeEcolage">
+                        
+    </div>
+    </center>
     <div class="ajouterClasseContainer"><br />
         <div class="title">
             <i class="cogs icon"></i><b>Paramétrage du montant total du sole d'écolage</b><br /><br />
@@ -23,7 +27,7 @@
             echo "<div class='ui red segment' style='font-size: 13px;'><center><b>Aucune classe n'a été répertoriée !</b></center></div>";
         } else {
     ?>
-        <table>
+        <table cellpadding="3">
             <tr>
                 <td>
                     Sélectionnez la classe correspondante
@@ -37,16 +41,34 @@
                         }
                     ?>
                     </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <b>Garçons</b>
+                </td>
+                <td>
+                    <input type="number" min="0" class="input" placeholder="Saisir nouveau solde ..." id="soldeEcolageGarReg" /> <b>F CFA</b>&nbsp;&nbsp;
+
                     
-                    <input type="number" min="0" class="input" placeholder="Saisir nouveau solde ..." id="soldeEcolageReg" /> <b>F CFA</b>&nbsp;&nbsp;
+
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <b>Filles</b>
+                </td>
+                <td>
+                    <input type="number" min="0" class="input" placeholder="Saisir nouveau solde ..." id="soldeEcolageFilReg" /> <b>F CFA</b>&nbsp;&nbsp;
+                </td>
+                
+            </tr>
+            <tr>
+                <td></td>
+                <td>
                     <button class="ui violet button mini" style="border-radius: 0;" id="soldeEcolageRegBouton">
                         <i class="cog icon"></i>Paramétrer
                     </button>
-
-                    <div style="display: inline-block" id="successRegSoldeEcolage">
-                        
-                    </div>
-
                 </td>
             </tr>
             
@@ -63,12 +85,13 @@
            
            $('#soldeEcolageRegBouton').click(function() {
 
-               var soldeEcolageReg = $('#soldeEcolageReg').val();
+               var soldeEcolageGarReg = $('#soldeEcolageGarReg').val();
+               var soldeEcolageFilReg = $('#soldeEcolageFilReg').val();
                var nomClasseEcolage = $('#nomClasseEcolage').val();
 
-               if (soldeEcolageReg!="") {
+               if (soldeEcolageFilReg!=""&&soldeEcolageGarReg!="") {
 
-                   $.post('/PROJET_ADEC/traitementsAjax/soldeEcolageParam.php', {soldeEcolageReg:soldeEcolageReg, nomClasseEcolage:nomClasseEcolage}, function(data) {
+                   $.post('/PROJET_ADEC/traitementsAjax/soldeEcolageParam.php', {soldeEcolageGarReg:soldeEcolageGarReg, soldeEcolageFilReg:soldeEcolageFilReg, nomClasseEcolage:nomClasseEcolage}, function(data) {
                         $('#successRegSoldeEcolage').html("<div style='background-color: #baecbc; color: #238028; padding: 4px; width: 200px; font-size: 13px;'><center><b><i class='check icon'></i>Opération effectuée !</b></center></div>");
                     });
                    

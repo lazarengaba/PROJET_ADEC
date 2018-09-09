@@ -21,9 +21,6 @@
                     <center><b>Classe</b></center>
                 </td>
                 <td>
-                    <center><b>Solde total</b></center>
-                </td>
-                <td>
                     <center><b>Solde versé</b></center>
                 </td>
                 <td>
@@ -43,9 +40,6 @@
                 <td>
                     <center><?=$data['nom_classe']; ?></center>
                 </td>
-                <td>
-                    <center><?=$data['solde_ecolage']; ?></center>
-                </td>
                 <td><center>
                     <?php
                         if ($data['montant_verse']) {
@@ -58,14 +52,30 @@
                 </td>
                 <td><center>
                     <?php
-                        if ($data['montant_verse']==$data['solde_ecolage']) {
+
+                        $solde=0;
+                        if ($data['sexe_eleve']=="Masculin") {
+                            
+                            $solde=$data['solde_ecolage_gar'];
+                        } else {
+                            
+                            $solde=$data['solde_ecolage_fil'];
+                        }
+
+                        if ($data['montant_verse']==$solde) {
                             echo "<span style='color: green;'><i class='check icon'></i>Soldé</span>";
                         } else {
-                    ?>
-                            <?=$data['solde_ecolage']-$data['montant_verse']; ?>
-                            <?php $reste=$data['solde_ecolage']-$data['montant_verse']; ?>
 
-                            <input type="hidden" value="<?=$reste; ?>" id="resteSoldeEcolage" />
+                            if ($data['sexe_eleve']=="Masculin") {
+                                $rest=($data['solde_ecolage_gar']-$data['montant_verse']);
+                                echo ($rest);
+                            } else {
+                                $rest=($data['solde_ecolage_fil']-$data['montant_verse']);
+                                echo ($rest);
+                            }
+                    ?>
+                           
+                            <input type="hidden" value="<?=$rest; ?>" id="resteSoldeEcolage" />
                     <?php
                         }
                         
@@ -73,7 +83,15 @@
                 </td>
                 <td><center>
                     <?php
-                        if ($data['montant_verse']==$data['solde_ecolage']) {
+                         $solde=0;
+                         if ($data['sexe_eleve']=="Masculin") {
+                             
+                             $solde=$data['solde_ecolage_gar'];
+                         } else {
+                             
+                             $solde=$data['solde_ecolage_fil'];
+                         }
+                        if ($data['montant_verse']==$solde) {
                             echo "-";
                         } else {
                     ?>
@@ -85,7 +103,15 @@
                 </td>
                 <td><center>
                     <?php
-                        if ($data['montant_verse']==$data['solde_ecolage']) {
+                        $solde=0;
+                        if ($data['sexe_eleve']=="Masculin") {
+                            
+                            $solde=$data['solde_ecolage_gar'];
+                        } else {
+                            
+                            $solde=$data['solde_ecolage_fil'];
+                        }
+                        if ($data['montant_verse']==$solde) {
                             echo "-";
                         } else {
                     ?>
@@ -99,7 +125,17 @@
         </table><br />
 
         <?php
-            if ($data['montant_verse']==$data['solde_ecolage']) {
+            
+            $solde=0;
+            if ($data['sexe_eleve']=="Masculin") {
+                            
+                $solde=$data['solde_ecolage_gar'];
+            } else {
+                            
+                $solde=$data['solde_ecolage_fil'];
+            }
+
+            if ($data['montant_verse']==$solde) {
                 
             } else {
         ?>
@@ -129,7 +165,7 @@
         $('#montantVersementEcolage').keyup(function() {
             if($(this).val().length >= $('#resteSoldeEcolage').val().length && $(this).val() > $('#resteSoldeEcolage').val()) {
                 alert( "Le montant entré est excédent sur le reste à verser");
-                $('#montantVersementEcolage').val("");
+                window.close();
             }
         });
 

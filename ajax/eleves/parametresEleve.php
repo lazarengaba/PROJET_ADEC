@@ -22,24 +22,16 @@
         } else {
     ?>   
         <center>
-        <table class="soldeEcolageTab" width="85%" style="border-collapse: collapse;">
-            <tr>
-                <td colspan="3">
-                    <div>
-                        
-                        <center><b><i class="dollar icon"></i>SOLDE ECOLAGE</b></center>
-                    </div>
-                </td>
-            </tr>
-            <tr>
+        <table cellpadding="7" width="85%">
+            <tr style='background-color: #aaa;'>
                 <td width="300">
                     <b>Classes</b>
                 </td>
-                <td width="250">
-                    <center><b>Solde écolage total</b></center>
+                <td width="250" align="right">
+                    <b>Solde écolage Garçons</b>
                 </td>
-                <td align="center">
-                    <b>Action</b>
+                <td align="right">
+                    <b>Solde écolage Garçons</b>
                 </td>
             </tr>
 
@@ -47,7 +39,9 @@
 
                 while ($data=$req_build->fetch()) {
 
-                    echo "<tr><td>".$data['nom_classe']."</td><td style='text-align: right; padding-right: 30px;'>".$data['solde_ecolage']." F CFA</td><td align='center'><a target='_blank' href='/PROJET_ADEC/soldeEcolageParam/?id=".$data['id_classe']."'><i class='edit icon'></i>Modifier</a></td></tr>";
+                    echo "<tr style='background-color: #ddd;'><td>".$data['nom_classe']."</td>
+                    <td align='right'>".$data['solde_ecolage_gar']." F CFA</td>
+                    <td align='right'>".$data['solde_ecolage_fil']." F CFA</td></tr>";
                 }
 
             ?>

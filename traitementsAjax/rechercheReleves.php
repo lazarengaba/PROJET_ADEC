@@ -13,7 +13,7 @@
     } else {
         $i=0;
         echo "<br /><table class=\"soldeEcolageTab\" width=\"100%\" style=\"border-collapse: collapse;\"><tr><td width='70'><center><b>N°</b></center></td><td><b>Nom</b></td>
-        <td><b>Prénom</b></td><td><b>Matricule</b></td><td><b>Date de naissance</b></td><td><b>Lieu de naissance</b></td><td width='100'><center><b>Note1 sur 20</b></center></td><td width='100'><center><b>Note1 sur 20</b></center></td></tr>";
+        <td><b>Prénom</b></td><td><b>Matricule</b></td><td><b>Date de naissance</b></td><td><b>Lieu de naissance</b></td><td width='100'><center><b>Note de classe</b></center></td><td width='100'><center><b>Note de composition</b></center></td></tr>";
        while ($data=$req_build->fetch()) {
            echo "<tr><td><center>".($i+=1)."</center></td><td>".$data['nom_de_famille']."</td><td>".$data['prenom']."</td><td>".$data['mle']."</td>
            <td>".$data['date_de_naissance']."</td><td>".$data['lieu_de_naissance']."</td><td>".$data['note_note1']."</td><td>".$data['note_note2']."</td></tr>";

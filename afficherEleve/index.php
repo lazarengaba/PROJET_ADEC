@@ -159,10 +159,26 @@
                 </td>
                 <td colspan="2">
                 <?php
+                    $reste=0;
                     if ($req_ecol_row==0) {
-                        echo "<b>".$data['solde_ecolage']."</b>";
+                        if ($data['sexe_eleve']=="Masculin") {
+                            $reste=$data['solde_ecolage_gar'];
+                            echo "<b>".$reste."</b>";
+                        } else {
+                            $reste=$data['solde_ecolage_fil'];
+                            echo "<b>".$reste."F CFA</b>";
+                        }
+                        
+                        
                     } else {
-                        echo "<b>".($data['solde_ecolage'] - $totalVersement)."</b>";
+                        if ($data['sexe_eleve']=="Masculin") {
+                            $reste=$data['solde_ecolage_gar'];
+                            
+                        } else {
+                            $reste=$data['solde_ecolage_fil'];
+                            
+                        }
+                        echo "<b>".($reste - $totalVersement)." F CFA</b>";
                     }
                 ?>
                 </td>

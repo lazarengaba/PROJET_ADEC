@@ -99,7 +99,7 @@
             var adresseParentEleve = $('#adresseParentEleve').val();
             var sexeEleve = $('#sexeEleve').val();
 
-            if (matriculeEleve!=""&&nomDeFamilleEleve!=""&&nomParentEleve!=""&&prenomEleve!=""&&adresseParentEleve!="") {
+            if (matriculeEleve!=""&&nomDeFamilleEleve!=""&&prenomEleve!=""&&adresseParentEleve!="") {
                 $.post('/PROJET_ADEC/traitementsAjax/inscrireEnseignant.php',{
                     matriculeEleve:matriculeEleve,
                     nomDeFamilleEleve:nomDeFamilleEleve,

@@ -5,6 +5,7 @@
     $req_build=$bdd->prepare($req);
     $req_exe=$req_build->execute(array($_POST['classeEleve']));
     $req_check=$req_build->rowCount($req);
+
 ?>
 
 <table class="soldeEcolageTab" width="99%" style="border-collapse: collapse; margin: 5px;">
@@ -39,7 +40,7 @@
 
     <tr>
         <td>
-            <?=$i+=1; ?>
+            <b><?=$i+=1; ?></b>
         </td>
         <td>
             <?=$data['nom_de_famille']; ?>
@@ -51,16 +52,17 @@
             <center><?=$data['mle']; ?></center>
         </td>
         <td>
-            <center><?=$data['solde_ecolage']; ?></center>
+            <center><?=(($data['sexe_eleve']=="Masculin") ? $data['solde_ecolage_gar'] : $data['solde_ecolage_fil']); ?></center>
         </td>
         <td>
             <center><b><?=$data['solde_verse']; ?></b></center>
         </td>
         <td>
-            <center><b><?=($data['solde_ecolage'] - $data['solde_verse']); ?></b></center>
+            <center><b>-</b></center>
         </td>
     </tr>
 
+   
     <?php
         }
 
